@@ -1,4 +1,4 @@
-# Personal SIEM System
+# Self-Hosted Personal SIEM System
 **Hunter Franklin — Started May 2026**
 
 ---
