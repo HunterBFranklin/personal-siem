@@ -1,28 +1,15 @@
 <div align="center">
-
+<img src="https://img.shields.io/badge/🛡️_Self--Hosted-Personal_SIEM_System-2ea44f?style=for-the-badge&logoColor=white&labelColor=1a3a2a" width="500"/>
 <br>
-
-<img src="https://img.shields.io/badge/🛡️_Self--Hosted-Personal_SIEM_System-2ea44f?style=for-the-badge&logoColor=white&labelColor=1a3a2a"/>
-
-<br><br>
-
-<img src="https://img.shields.io/badge/Hunter_Franklin-Started_May_2026-238636?style=for-the-badge&labelColor=1a3a2a"/>
-
-<br><br>
-
-<p>
-A self-hosted Security Information and Event Management (SIEM) system<br>
-built from the ground up using Docker, Wazuh, and the ELK Stack.<br>
-This project simulates a real-world security operations environment —<br>
-monitoring live endpoints, detecting threats, mapping them to the MITRE<br>
-ATT&CK framework, and delivering automated HTML security reports via email.
-</p>
-
-<p><i>A personal learning project documenting my journey into cybersecurity engineering, infrastructure, and security automation.</i></p>
-
-<br>
-
+<img src="https://img.shields.io/badge/Hunter_Franklin-Started_May_2026-238636?style=for-the-badge&labelColor=1a3a2a" width="380"/>
 </div>
+<br><br>
+
+A self-hosted Security Information and Event Management (SIEM) system built from the ground up using Docker, Wazuh, and the ELK Stack. 
+This project simulates a real-world security operations environment — monitoring live endpoints, detecting threats, mapping them to the 
+MITRE ATT&CK framework, and delivering automated HTML security reports via email.
+
+*A personal learning project documenting my journey into cybersecurity engineering, infrastructure, and security automation.*
 
 ---
 
@@ -75,7 +62,7 @@ ATT&CK framework, and delivering automated HTML security reports via email.
 
 ---
 
-## What It Does:
+## What It Does
 
 - Collects security events from two endpoints — my MacBook Pro and 
   a Ubuntu 22.04 VM running in UTM
@@ -89,7 +76,7 @@ ATT&CK framework, and delivering automated HTML security reports via email.
 
 ---
 
-## Stack:
+## Stack
 
 | Tool | Purpose |
 |---|---|
@@ -103,7 +90,7 @@ ATT&CK framework, and delivering automated HTML security reports via email.
 
 ---
 
-## How I Set It Up:
+## How I Set It Up
 
 ### Requirements
 - Docker Desktop (Apple Silicon)
@@ -166,7 +153,7 @@ personal-siem/
 ```
 ---
 
-## What's Done and What's Next:
+## What's Done and What's Next
 
 Done:
 - Wazuh + ELK stack running in Docker
@@ -208,7 +195,7 @@ Next:
 
 ---
 
-## References
+## References:
 
 **Infrastructure:**
 - [Wazuh Documentation](https://documentation.wazuh.com)
