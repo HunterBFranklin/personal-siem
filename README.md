@@ -13,8 +13,6 @@ This is an ongoing project — I'm adding to it as I learn.
 
 ---
 
-## Screenshots:
-
 ## Screenshots
 
 <table>
