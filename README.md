@@ -6,10 +6,20 @@
 <br>
 
 A self-hosted Security Information and Event Management (SIEM) system built from the ground up using Docker, Wazuh, and the Elasticsearch/Logstash/Kibana (ELK) Stack. 
-This project simulates a real-world security operations environment by monitoring live endpoints, detecting threats, mapping them to the 
-MITRE ATT&CK framework, and delivering automated HTML security reports via email.
+The system monitors live endpoints in real time, detects threats ranging from brute force attempts and privilege escalation to file integrity violations and CVE 
+vulnerabilities, and maps every alert to the MITRE ATT&CK framework automatically.
 
-*A personal learning project documenting my journey into cybersecurity engineering, infrastructure, and security automation.*
+Security events are collected from two active endpoints, an Apple Silicon MacBook Pro M3 and a Ubuntu 22.04 LTS virtual machine running in UTM, and 
+fed into a centralized Wazuh manager running in Docker. A modular Python automation layer queries the Elasticsearch API directly to generate tiered reports 
+across three severity levels (critical, high, and all alerts), delivering fully formatted HTML email reports with severity breakdowns, MITRE technique bar charts, 
+and color-coded alert details.
+
+Beyond detection, the system integrates Fail2Ban for automated threat response — automatically banning IPs that trigger repeated SSH failures — and cross-references 
+installed packages against the National Vulnerability Database for continuous CVE monitoring. Compliance mapping against PCI DSS, HIPAA, NIST 800-53, and GDPR runs passively 
+in the background on every monitored endpoint.
+
+_This is an ongoing personal project documenting my journey into cybersecurity engineering, security automation, network engineering, and infrastructure. It started as a basic Wazuh deployment and 
+has grown into a structured, versioned security operations platform, with a homelab, home server, and VPN integration planned as the next phase of expansion._
 
 ## Screenshots
 
