@@ -13,47 +13,54 @@ MITRE ATT&CK framework, and delivering automated HTML security reports via email
 
 ## Screenshots
 
+<h3>v2.0 — Current</h3>
+
 <table>
   <tr>
-    <td align="center" style="background-color:#1a3a2a; padding:8px;">
-      <img src="https://img.shields.io/badge/Wazuh-Dashboard-2ea44f?style=for-the-badge"/>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Email-Report_v2-2ea44f?style=for-the-badge"/>
     </td>
-    <td align="center" style="background-color:#1a3a2a; padding:8px;">
-      <img src="https://img.shields.io/badge/VM-Desktop-2ea44f?style=for-the-badge"/>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Terminal-Report_v2-2ea44f?style=for-the-badge"/>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="screenshots/wazuh-dashboard.png" width="480"/>
+      <img src="screenshots/v2/email-report.png" width="480"/>
     </td>
     <td align="center">
-      <img src="screenshots/vm-desktop.png" width="480"/>
+      <img src="screenshots/v2/terminal-report.png" width="480"/>
+    </td>
+  </tr>
+</table>
+
+<h3>v1.0 — Initial Release</h3>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Email-Report_v1-238636?style=for-the-badge"/>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Terminal-Report_v1-238636?style=for-the-badge"/>
     </td>
   </tr>
   <tr>
-    <td align="center" style="background-color:#1a3a2a; padding:8px;">
-      <img src="https://img.shields.io/badge/Neofetch-Endpoint-2ea44f?style=for-the-badge"/>
-    </td>
-    <td align="center" style="background-color:#1a3a2a; padding:8px;">
-      <img src="https://img.shields.io/badge/Terminal-Report-2ea44f?style=for-the-badge"/>
-    </td>
-  </tr>
-  <tr>
     <td align="center">
-      <img src="screenshots/neofetch.png" width="480"/>
+      <img src="screenshots/v1/email-report.png" width="480"/>
     </td>
     <td align="center">
-      <img src="screenshots/terminal-report.png" width="480"/>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center" style="background-color:#1a3a2a; padding:8px;">
-      <img src="https://img.shields.io/badge/Email-Report-2ea44f?style=for-the-badge"/>
+      <img src="screenshots/v1/terminal-report.png" width="480"/>
     </td>
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <img src="screenshots/email-report.png" width="480"/>
+      <img src="https://img.shields.io/badge/Neofetch-Endpoint-238636?style=for-the-badge"/>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="screenshots/v1/neofetch.png" width="480"/>
     </td>
   </tr>
 </table>
@@ -162,36 +169,72 @@ selfhosted-siem-system/
 Done:
 - Wazuh + ELK stack running in Docker
 - Ubuntu VM and MacBook Pro both monitored
-- Python script querying Elasticsearch API
-- HTML email reports with severity breakdown and MITRE mapping
-- Real CVE detected and remediated
+- Fail2Ban installed with subnet whitelist for automated SSH ban detection
+- Modular Python architecture — config, elasticsearch_client, formatter, email_reporter, utility
+- Three severity tier runners — critical (12-15), high (7-11), all (1+)
+- Master runner executing all three reports in sequence
+- Fully redesigned HTML email with Gmail-compatible table layout
+- Severity breakdown cards matching Wazuh rule level scale (1-3/4-6/7-11/12-15)
+- CSS horizontal bar chart for MITRE ATT&CK techniques
+- Color coded severity badges and technique bubbles in alert details
+- UTC to local timezone conversion on all timestamps
+- Real CVE detected, researched, and remediated (CVE-2026-26066)
 - Credentials protected with python-dotenv
+- Versioned screenshots documenting v1.0 and v2.0 progression
 
 Next:
-- Cron job for automated 15 minute reporting
+- Cron job for automated scheduled reporting
 - SMS alerts for new devices joining the network (Twilio)
 - Custom Wazuh detection rules
 - Suricata for network traffic analysis
+- JavaScript custom dashboard
 - Windows endpoint when I get a PC later this year
 - Eventually tie this into a full homelab with a home server and VPN
 
+## Roadmap
+```
+- [x] Wazuh + ELK stack deployed via Docker
+- [x] Ubuntu VM monitored endpoint
+- [x] MacBook Pro agent connected
+- [x] Python alert notifier querying Elasticsearch API
+- [x] Modular Python architecture
+- [x] Three severity tier runners
+- [x] HTML email with severity charts and MITRE breakdown
+- [x] Fail2Ban integration
+- [x] Real CVE detected and remediated (CVE-2026-26066)
+- [x] Credentials secured with python-dotenv
+- [x] Published to GitHub
+- [ ] Cron job scheduling
+- [ ] SMS alerting via Twilio
+- [ ] Custom Wazuh detection rules
+- [ ] Suricata network traffic analysis
+- [ ] JavaScript custom dashboard
+- [ ] Windows endpoint agent
+- [ ] Home server integration
+- [ ] VPN monitoring
+```
 ## Versions
 
-**v1.0 — May 2026 (current)**
-- Wazuh + ELK stack deployed via Docker
-- Ubuntu 22.04 LTS ARM64 VM configured as monitored endpoint
-- MacBook Pro M3 connected as second live agent
-- Python script querying Elasticsearch API directly
-- Plain text terminal alert report
-- Basic email delivery via Gmail SMTP
-- Real CVE detected and remediated (CVE-2026-26066)
+**v2.0 — May 2026 (current)**
+- Modular Python architecture — config, elasticsearch_client, 
+  formatter, email_reporter, utility
+- Three severity tier runners — critical (12-15), high (7-11), all (1+)
+- Master runner (run.py) executes all three in sequence
+- Fully redesigned HTML email with Gmail-compatible table layout
+- Severity breakdown cards matching Wazuh rule level scale
+- CSS horizontal bar chart for MITRE ATT&CK techniques
+- Technique color coded bubbles in alert details
+- UTC to local time conversion for all timestamps
+- Active agents list with lookback window context
+- Fail2Ban integration for automated SSH ban detection
 - Credentials secured with python-dotenv
 
-**v2.0 — In Development**
-- Branded HTML email reports with severity charts and MITRE breakdown
-- Agent breakdown and MITRE ATT&CK technique summary in email
-- Improved error handling and logging
-- Cron job scheduling for automated 15 minute reports
+**v1.0 — May 2026**
+- Wazuh + ELK stack deployed via Docker
+- Ubuntu VM and MacBook Pro monitored
+- Single Python script querying Elasticsearch API
+- Plain text email delivery via Gmail SMTP
+- Real CVE detected and remediated (CVE-2026-26066)
 
 ## References:
 
