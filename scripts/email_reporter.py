@@ -36,7 +36,7 @@ def send_email_report(report, subject_override=None):
         msg['Subject'] = EMAIL_SUBJECT
         
         # Add the report as the email body.
-        msg.attach(MIMEText(report, 'plain')) # Plain txt, not HTML.
+        msg.attach(MIMEText(report, 'html')) # HTML.
         
         # Connect to Gmail and send report.
         print("📧 Connecting to Gmail SMTP server...")
