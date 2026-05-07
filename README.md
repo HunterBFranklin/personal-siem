@@ -66,7 +66,7 @@ This is an ongoing project — I'm adding to it as I learn.
 ### Requirements
 - Docker Desktop (Apple Silicon)
 - Python 3
-- UTM — free at mac.getutm.app
+- UTM
 - Ubuntu 22.04.5 LTS ARM64 Server ISO
 
 ### Start Wazuh:
@@ -78,9 +78,11 @@ docker compose up -d
 ```
 
 ### Dashboard:
+```
 https://localhost
 Username: admin
 Password: SecretPassword
+```
 
 ### Python alerting script:
 ```bash
@@ -95,7 +97,7 @@ python3 scripts/alert_notifier.py
 ## Something That Actually Worked
 
 While the system was running, Wazuh automatically flagged 
-**CVE-2026-26066** on the Ubuntu VM — a medium severity ImageMagick 
+**CVE-2026-26066** on the Ubuntu VM; a medium severity ImageMagick 
 vulnerability (CVSS 6.2) that causes a denial of service via a crafted 
 image profile. I hadn't manually triggered anything — it just showed up 
 in the dashboard.
@@ -108,7 +110,7 @@ this project click for me.
 ---
 
 ## Project Structure
-
+```
 personal-siem/
 ├── scripts/
 │   ├── alert_notifier.py    # queries Elasticsearch, sends email report
@@ -119,7 +121,7 @@ personal-siem/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
+```
 ---
 
 ## What's Done and What's Next:
@@ -161,23 +163,6 @@ Next:
 - Agent breakdown and MITRE ATT&CK technique summary in email
 - Improved error handling and logging
 - Cron job scheduling for automated 15 minute reports
-
----
-
-**v3.0 — Planned**
-- SMS alerting for new devices joining the network (Twilio)
-- Slack webhook integration
-- Custom Wazuh detection rules
-- Suricata network traffic analysis
-
----
-
-**v4.0 — Planned**
-- Windows endpoint agent (when PC arrives)
-- JavaScript custom dashboard
-- Home server and VPN integration
-- Honeypot deployment
-- Full homelab network monitoring
 
 ---
 
