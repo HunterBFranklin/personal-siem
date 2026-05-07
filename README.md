@@ -1,15 +1,26 @@
-# Self-Hosted Personal SIEM System
-**Hunter Franklin — Started May 2026**
+<table width="100%">
+  <tr>
+    <td align="center" style="background-color:#1a3a2a; padding:16px;">
+      <img src="https://img.shields.io/badge/🛡️_Self--Hosted-Personal_SIEM_System-2ea44f?style=for-the-badge&logoColor=white"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="background-color:#1a3a2a; padding:8px;">
+      <img src="https://img.shields.io/badge/Hunter_Franklin-Started_May_2026-238636?style=for-the-badge"/>
+    </td>
+  </tr>
+</table>
 
----
+<br>
 
-I built this project to get hands-on experience with security monitoring 
-infrastructure. It's a working SIEM that collects and analyzes security 
-events from real endpoints, maps them to the MITRE ATT&CK framework, and 
-sends automated email reports. Everything runs locally on my MacBook Pro M3 
-via Docker.
+A self-hosted Security Information and Event Management (SIEM) system
+built from the ground up using Docker, Wazuh, and the ELK Stack.
+This project simulates a real-world security operations environment —
+monitoring live endpoints, detecting threats, mapping them to the MITRE
+ATT&CK framework, and delivering automated HTML security reports via email.
 
-This is an ongoing project — I'm adding to it as I learn.
+This is a personal learning project documenting my journey into
+cybersecurity engineering, infrastructure, and security automation.
 
 ---
 
@@ -197,13 +208,52 @@ Next:
 
 ## References
 
-- [Wazuh Docs](https://documentation.wazuh.com)
-- [Elasticsearch API](https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html)
-- [MITRE ATT&CK](https://attack.mitre.org)
-- [NVD](https://nvd.nist.gov)
-- [CVE-2026-26066](https://github.com/advisories/GHSA-v994-63cg-9wj3)
-- [Docker Docs](https://docs.docker.com)
-- [UTM](https://docs.getutm.app)
+**Infrastructure:**
+- [Wazuh Documentation](https://documentation.wazuh.com)
+- [Wazuh Docker Deployment](https://documentation.wazuh.com/current/deployment-options/docker/wazuh-container.html)
+- [Wazuh GitHub](https://github.com/wazuh/wazuh-docker)
+- [Docker Documentation](https://docs.docker.com)
+- [Docker Compose Reference](https://docs.docker.com/compose/)
+- [UTM Virtualization](https://docs.getutm.app)
+- [Ubuntu Server ARM64](https://cdimage.ubuntu.com/releases/22.04/release/)
+
+**ELK Stack:**
+- [Elasticsearch REST API](https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html)
+- [Elasticsearch Python Client](https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html)
+- [Kibana Documentation](https://www.elastic.co/guide/en/kibana/current/index.html)
+- [Logstash Documentation](https://www.elastic.co/guide/en/logstash/current/index.html)
+
+**Security Frameworks:**
+- [MITRE ATT&CK Framework](https://attack.mitre.org)
+- [NVD — National Vulnerability Database](https://nvd.nist.gov)
+- [CVE Database](https://cve.mitre.org)
+- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
+- [CVE-2026-26066 Advisory](https://github.com/advisories/GHSA-v994-63cg-9wj3)
+
+**Python Libraries:**
+- [Requests](https://docs.python-requests.org)
+- [urllib3](https://urllib3.readthedocs.io)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
+- [smtplib](https://docs.python.org/3/library/smtplib.html)
+- [schedule](https://schedule.readthedocs.io)
+
+**Desktop Environment:**
+- [XFCE](https://www.xfce.org)
+- [Oh My Zsh](https://ohmyz.sh)
+- [Neofetch](https://github.com/dylanaraps/neofetch)
+
+**README Design:**
+- [Shields.io](https://shields.io)
+- [GitHub Markdown Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [GitHub Table Formatting](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables)
+- [Best README Template](https://github.com/othneildrew/Best-README-Template)
+- [Awesome README](https://github.com/matiassingers/awesome-readme)
+
+**Community:**
+- [r/homelab](https://reddit.com/r/homelab)
+- [r/selfhosted](https://reddit.com/r/selfhosted)
+- [r/cybersecurity](https://reddit.com/r/cybersecurity)
+- [Wazuh Community](https://wazuh.com/community)
 
 ---
 
