@@ -3,7 +3,7 @@
 <br>
 <img src="https://img.shields.io/badge/Hunter_Franklin-Started_May_2026-238636?style=for-the-badge&labelColor=1a3a2a" width="380"/>
 <br>
-<img src="https://img.shields.io/badge/Current_Version_:_1.0-238636?style=for-the-badge&labelColor=1a3a2a" width="180"/>
+<img src="https://img.shields.io/badge/Current_Version_:_1.5-238636?style=for-the-badge&labelColor=1a3a2a" width="180"/>
 </div>
 <br>
 
@@ -130,15 +130,34 @@ this project click for me.
 
 ## Project Structure
 ```
-personal-siem/
+selfhosted-siem-system/
 ├── scripts/
-│   ├── alert_notifier.py    # queries Elasticsearch, sends email report
-│   ├── .env.example         # credential template
-│   └── .env                 # local credentials, not committed
+│   ├── run.py                   # master runner — executes all three reports in sequence
+│   ├── critical_alerts.py       # level 12+ severity only
+│   ├── high_alerts.py           # level 7-11 severity
+│   ├── all_alerts.py            # all alerts level 1+
+│   ├── config.py                # centralized configuration and env variables
+│   ├── elasticsearch_client.py  # Elasticsearch API queries
+│   ├── formatter.py             # HTML report formatting and template building
+│   ├── email_reporter.py        # HTML email construction and delivery
+│   ├── utils.py                 # shared helper functions and terminal output
+│   ├── scheduler.py             # automated scheduling via cron (coming v3.0)
+│   ├── sms_reporter.py          # SMS alerting via Twilio (coming v3.0)
+│   ├── .env                     # local credentials — never committed
+│   └── .env.example             # credential template — safe to commit
+├── templates/
+│   └── email_template.html      # HTML email template (coming v2.0)
+├── logs/
+│   └── alert.log                # script output log
 ├── screenshots/
-├── docs/
-├── requirements.txt
-├── .gitignore
+│   ├── wazuh-dashboard.png
+│   ├── vm-desktop.png
+│   ├── neofetch.png
+│   ├── terminal-report.png
+│   └── email-report.png
+├── docs/                        # additional documentation
+├── requirements.txt             # Python dependencies
+├── .gitignore                   # protects credentials from Git
 └── README.md
 ```
 
