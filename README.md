@@ -7,8 +7,8 @@
 </div>
 <br>
 
-A self-hosted Security Information and Event Management (SIEM) system built from the ground up using Docker, Wazuh, and the ELK Stack. 
-This project simulates a real-world security operations environment — monitoring live endpoints, detecting threats, mapping them to the 
+A self-hosted Security Information and Event Management (SIEM) system built from the ground up using Docker, Wazuh, and the Elasticsearch/Logstash/Kibana (ELK) Stack. 
+This project simulates a real-world security operations environment by monitoring live endpoints, detecting threats, mapping them to the 
 MITRE ATT&CK framework, and delivering automated HTML security reports via email.
 
 *A personal learning project documenting my journey into cybersecurity engineering, infrastructure, and security automation.*
