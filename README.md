@@ -11,8 +11,6 @@ MITRE ATT&CK framework, and delivering automated HTML security reports via email
 
 *A personal learning project documenting my journey into cybersecurity engineering, infrastructure, and security automation.*
 
----
-
 ## Screenshots
 
 <table>
@@ -60,8 +58,6 @@ MITRE ATT&CK framework, and delivering automated HTML security reports via email
   </tr>
 </table>
 
----
-
 ## What It Does
 
 - Collects security events from two endpoints — my MacBook Pro and 
@@ -74,8 +70,6 @@ MITRE ATT&CK framework, and delivering automated HTML security reports via email
   a formatted HTML email report
 - Monitors compliance against PCI DSS, HIPAA, NIST, and GDPR frameworks
 
----
-
 ## Stack
 
 | Tool | Purpose |
@@ -87,8 +81,6 @@ MITRE ATT&CK framework, and delivering automated HTML security reports via email
 | UTM | Virtualization on Apple Silicon |
 | Python 3 | Alert automation and email reporting |
 | macOS (M3 Pro) | Host machine |
-
----
 
 ## How I Set It Up
 
@@ -121,8 +113,6 @@ cp scripts/.env.example scripts/.env
 python3 scripts/alert_notifier.py
 ```
 
----
-
 ## Something That Actually Worked
 
 While the system was running, Wazuh automatically flagged 
@@ -135,8 +125,6 @@ I looked it up on NVD, confirmed it was real, patched it with
 `sudo apt upgrade`, and watched it clear from the findings. That whole 
 cycle — detection, research, remediation, verification — is what made 
 this project click for me.
-
----
 
 ## Project Structure
 ```
@@ -151,7 +139,6 @@ personal-siem/
 ├── .gitignore
 └── README.md
 ```
----
 
 ## What's Done and What's Next
 
@@ -171,8 +158,6 @@ Next:
 - Windows endpoint when I get a PC later this year
 - Eventually tie this into a full homelab with a home server and VPN
 
----
-
 ## Versions
 
 **v1.0 — May 2026 (current)**
@@ -185,15 +170,11 @@ Next:
 - Real CVE detected and remediated (CVE-2026-26066)
 - Credentials secured with python-dotenv
 
----
-
 **v2.0 — In Development**
 - Branded HTML email reports with severity charts and MITRE breakdown
 - Agent breakdown and MITRE ATT&CK technique summary in email
 - Improved error handling and logging
 - Cron job scheduling for automated 15 minute reports
-
----
 
 ## References:
 
@@ -243,7 +224,5 @@ Next:
 - [r/selfhosted](https://reddit.com/r/selfhosted)
 - [r/cybersecurity](https://reddit.com/r/cybersecurity)
 - [Wazuh Community](https://wazuh.com/community)
-
----
 
 [@HunterBFranklin](https://github.com/HunterBFranklin) — MIT License
