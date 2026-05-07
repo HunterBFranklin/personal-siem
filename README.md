@@ -52,7 +52,6 @@ This is an ongoing project — I'm adding to it as I learn.
 |---|---|
 | Wazuh 4.14.5 | HIDS, log collection, vulnerability detection |
 | Elasticsearch | Event storage and indexing |
-| Kibana | Dashboard and visualization |
 | Docker + Compose | Runs the whole stack in containers |
 | Ubuntu 22.04 LTS ARM64 | Monitored Linux VM endpoint |
 | UTM | Virtualization on Apple Silicon |
