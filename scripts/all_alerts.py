@@ -28,7 +28,11 @@ def main():
     print(f"     Window:    Last {LOOKBACK_MINUTES} minutes\n")
 
     try:
-        results = get_recent_alerts(severity_override=1)
+        results = get_recent_alerts(
+            severity_override=1,
+            lookback_override=15,
+            size_override=50
+        )
         report = format_alerts(results, severity_label="All Alerts", severity_min=1)
         print_report(report, severity_label="All Alerts", severity_min=1)
 

@@ -30,7 +30,12 @@ def main():
     
     # Queries Elasticsearch, formats raw data, and prints report.
     try:
-        results = get_recent_alerts(severity_override=7, severity_max=11)
+        results = get_recent_alerts(
+            severity_override=7,
+            severity_max=11,
+            lookback_override=60,
+            size_override=100
+        )
         report = format_alerts(results, severity_label="High", severity_min=7, severity_max=11)
         print_report(report, severity_label="High", severity_min=7, severity_max=11)
 

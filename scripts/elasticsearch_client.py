@@ -21,15 +21,17 @@ from config import (
 # Disable SSL warnings (for self-signed certificate).
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-def get_recent_alerts(severity_override=None, severity_max=None):
+def get_recent_alerts(severity_override=None, severity_max=None, lookback_override=None, size_override=None):
 
     """
     Query Elasticsearch for recent high severity alerts (rule.level 7-15).
     Returns raw results from the API.
     """
     from config import LOOKBACK_MINUTES
-    
-    threshold = severity_override if severity_override is not None else 1
+
+    threshold  = severity_override if severity_override is not None else 1
+    lookback   = lookback_override if lookback_override is not None else LOOKBACK_MINUTES
+    size       = size_override if size_override is not None else 20
 
     # Build level range filter.
     level_filter = {"gte": threshold}
@@ -44,7 +46,7 @@ def get_recent_alerts(severity_override=None, severity_max=None):
                     {
                         "range": {
                             "@timestamp": {
-                                "gte": f"now-{LOOKBACK_MINUTES}m" # Range of current time to lookback time (15 mins prior).
+                                "gte": f"now-{lookback}m" # Range of current time to lookback time (15 mins prior).
                             }
                         }
                     },
@@ -57,7 +59,7 @@ def get_recent_alerts(severity_override=None, severity_max=None):
             }
         },
         "sort": [{"@timestamp": {"order": "desc"}}], # Sorts results to newest first.
-        "size": 20 # Max results of 20.
+        "size": size
     }
 
     # 

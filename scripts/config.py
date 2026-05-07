@@ -16,7 +16,8 @@ load_dotenv()
 ELASTICSEARCH_URL   = "https://localhost:9200"
 ES_USER             = os.getenv("ES_USER")
 ES_PASSWORD         = os.getenv("ES_PASSWORD")
-LOOKBACK_MINUTES    = 15 # Lookback time (min).
+LOOKBACK_MINUTES = 15
+DEFAULT_SIZE     = 20
 
 # --- Email Config ---
 EMAIL_SENDER   = os.getenv("EMAIL_SENDER")
