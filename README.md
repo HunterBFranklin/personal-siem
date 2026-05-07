@@ -17,19 +17,13 @@ MITRE ATT&CK framework, and delivering automated HTML security reports via email
 
 <table>
   <tr>
-    <td align="center">
+    <td colspan="2" align="center">
       <img src="https://img.shields.io/badge/Email-Report_v2-2ea44f?style=for-the-badge"/>
-    </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/Terminal-Report_v2-2ea44f?style=for-the-badge"/>
     </td>
   </tr>
   <tr>
-    <td align="center">
-      <img src="screenshots/v2/email-report.png" width="480"/>
-    </td>
-    <td align="center">
-      <img src="screenshots/v2/terminal-report.png" width="480"/>
+    <td colspan="2" align="center">
+      <img src="screenshots/v2.0/email-report.png" width="960"/>
     </td>
   </tr>
 </table>
@@ -47,10 +41,10 @@ MITRE ATT&CK framework, and delivering automated HTML security reports via email
   </tr>
   <tr>
     <td align="center">
-      <img src="screenshots/v1/email-report.png" width="480"/>
+      <img src="screenshots/v1.0/email-report.png" width="480"/>
     </td>
     <td align="center">
-      <img src="screenshots/v1/terminal-report.png" width="480"/>
+      <img src="screenshots/v1.0/terminal-report.png" width="480"/>
     </td>
   </tr>
   <tr>
@@ -60,22 +54,23 @@ MITRE ATT&CK framework, and delivering automated HTML security reports via email
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <img src="screenshots/v1/neofetch.png" width="480"/>
+      <img src="screenshots/v1.0/neofetch.png" width="480"/>
     </td>
   </tr>
 </table>
 
 ## What It Does
 
-- Collects security events from two endpoints — my MacBook Pro and 
-  a Ubuntu 22.04 VM running in UTM
-- Detects threats like brute force attempts, failed logins, privilege 
-  escalation, and file integrity violations
-- Maps every alert to a MITRE ATT&CK technique automatically
-- Scans for known CVEs on monitored endpoints against the NVD database
-- Runs a Python script that queries Elasticsearch directly and sends 
-  a formatted HTML email report
-- Monitors compliance against PCI DSS, HIPAA, NIST, and GDPR frameworks
+- Collects security events from two endpoints: my MacBook Pro M3 and a Ubuntu 22.04 LTS VM running in UTM on Apple Silicon
+- Detects threats, including brute force attempts, failed logins, privilege escalation, file integrity violations, and unauthorized SSH access
+- Automatically bans malicious IPs via Fail2Ban integration after repeated failed SSH attempts
+- Maps every alert to a MITRE ATT&CK technique and tactic automatically
+- Scans monitored endpoints for known CVEs cross-referenced against the NVD database
+- Runs three severity tier Python scripts (critical, high, all) that query Elasticsearch directly via REST API
+- Delivers fully formatted HTML email reports with severity breakdown, MITRE bar chart, and color-coded alert details
+- Converts all timestamps from UTC to local time automatically
+- Monitors compliance against PCI DSS, HIPAA, NIST 800-53, and GDPR frameworks
+- Master runner executes all three report tiers in sequence with a single command
 
 ## Stack
 
@@ -176,7 +171,7 @@ Done:
 - Fully redesigned HTML email with Gmail-compatible table layout
 - Severity breakdown cards matching Wazuh rule level scale (1-3/4-6/7-11/12-15)
 - CSS horizontal bar chart for MITRE ATT&CK techniques
-- Color coded severity badges and technique bubbles in alert details
+- Color-coded severity badges and technique bubbles in alert details
 - UTC to local timezone conversion on all timestamps
 - Real CVE detected, researched, and remediated (CVE-2026-26066)
 - Credentials protected with python-dotenv
@@ -196,7 +191,7 @@ Next:
 - [x] Wazuh + ELK stack deployed via Docker
 - [x] Ubuntu VM monitored endpoint
 - [x] MacBook Pro agent connected
-- [x] Python alert notifier querying Elasticsearch API
+- [x] Python alert notifier querying the Elasticsearch API
 - [x] Modular Python architecture
 - [x] Three severity tier runners
 - [x] HTML email with severity charts and MITRE breakdown
@@ -221,9 +216,9 @@ Next:
 - Three severity tier runners — critical (12-15), high (7-11), all (1+)
 - Master runner (run.py) executes all three in sequence
 - Fully redesigned HTML email with Gmail-compatible table layout
-- Severity breakdown cards matching Wazuh rule level scale
+- Severity breakdown cards matching the Wazuh rule level scale
 - CSS horizontal bar chart for MITRE ATT&CK techniques
-- Technique color coded bubbles in alert details
+- Technique: color-coded bubbles in alert details
 - UTC to local time conversion for all timestamps
 - Active agents list with lookback window context
 - Fail2Ban integration for automated SSH ban detection
@@ -232,45 +227,79 @@ Next:
 **v1.0 — May 2026**
 - Wazuh + ELK stack deployed via Docker
 - Ubuntu VM and MacBook Pro monitored
-- Single Python script querying Elasticsearch API
+- Single Python script querying the Elasticsearch API
 - Plain text email delivery via Gmail SMTP
 - Real CVE detected and remediated (CVE-2026-26066)
 
-## References:
+## References
 
 **Infrastructure:**
 - [Wazuh Documentation](https://documentation.wazuh.com)
 - [Wazuh Docker Deployment](https://documentation.wazuh.com/current/deployment-options/docker/wazuh-container.html)
 - [Wazuh GitHub](https://github.com/wazuh/wazuh-docker)
+- [Wazuh Agent Enrollment](https://documentation.wazuh.com/current/user-manual/agent/agent-enrollment/index.html)
 - [Docker Documentation](https://docs.docker.com)
 - [Docker Compose Reference](https://docs.docker.com/compose/)
 - [UTM Virtualization](https://docs.getutm.app)
 - [Ubuntu Server ARM64](https://cdimage.ubuntu.com/releases/22.04/release/)
+- [Fail2Ban Documentation](https://www.fail2ban.org/wiki/index.php/Main_Page)
+- [Fail2Ban GitHub](https://github.com/fail2ban/fail2ban)
+- [Fail2Ban — Wazuh Integration](https://documentation.wazuh.com/current/user-manual/capabilities/active-response/default-active-response-scripts.html)
+- [LightDM Display Manager](https://wiki.ubuntu.com/LightDM)
+- [XFCE Desktop Environment](https://www.xfce.org)
 
 **ELK Stack:**
 - [Elasticsearch REST API](https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html)
+- [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
+- [Elasticsearch Range Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html)
 - [Elasticsearch Python Client](https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html)
 - [Kibana Documentation](https://www.elastic.co/guide/en/kibana/current/index.html)
 - [Logstash Documentation](https://www.elastic.co/guide/en/logstash/current/index.html)
 
 **Security Frameworks:**
 - [MITRE ATT&CK Framework](https://attack.mitre.org)
+- [MITRE ATT&CK — Brute Force T1110](https://attack.mitre.org/techniques/T1110/)
+- [MITRE ATT&CK — Sudo Caching T1548.003](https://attack.mitre.org/techniques/T1548/003/)
+- [MITRE ATT&CK — Password Guessing T1110.001](https://attack.mitre.org/techniques/T1110/001/)
 - [NVD — National Vulnerability Database](https://nvd.nist.gov)
 - [CVE Database](https://cve.mitre.org)
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
+- [NIST 800-53 Controls](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final)
 - [CVE-2026-26066 Advisory](https://github.com/advisories/GHSA-v994-63cg-9wj3)
+- [PCI DSS Standards](https://www.pcisecuritystandards.org)
+- [HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html)
+- [GDPR Official Text](https://gdpr-info.eu)
 
 **Python Libraries:**
 - [Requests](https://docs.python-requests.org)
 - [urllib3](https://urllib3.readthedocs.io)
 - [python-dotenv](https://pypi.org/project/python-dotenv/)
 - [smtplib](https://docs.python.org/3/library/smtplib.html)
+- [email.mime](https://docs.python.org/3/library/email.mime.html)
+- [datetime](https://docs.python.org/3/library/datetime.html)
+- [json](https://docs.python.org/3/library/json.html)
 - [schedule](https://schedule.readthedocs.io)
+
+**Email Development:**
+- [Gmail SMTP Settings](https://support.google.com/mail/answer/7126229)
+- [Gmail App Passwords](https://support.google.com/accounts/answer/185833)
+- [HTML Email Compatibility — Can I Email](https://www.caniemail.com)
+- [HTML Email Best Practices](https://www.litmus.com/blog/html-email-best-practices)
+- [Gmail CSS Support](https://developers.google.com/gmail/design/css)
 
 **Desktop Environment:**
 - [XFCE](https://www.xfce.org)
+- [LightDM GTK Greeter](https://github.com/Xubuntu/lightdm-gtk-greeter)
 - [Oh My Zsh](https://ohmyz.sh)
 - [Neofetch](https://github.com/dylanaraps/neofetch)
+- [Terminator Terminal](https://gnome-terminator.org)
+- [Firefox for Linux](https://www.mozilla.org/en-US/firefox/linux/)
+
+**Git & GitHub:**
+- [Git Documentation](https://git-scm.com/doc)
+- [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+- [Git Stash](https://git-scm.com/docs/git-stash)
+- [Git Rebase](https://git-scm.com/docs/git-rebase)
 
 **README Design:**
 - [Shields.io](https://shields.io)
@@ -283,6 +312,8 @@ Next:
 - [r/homelab](https://reddit.com/r/homelab)
 - [r/selfhosted](https://reddit.com/r/selfhosted)
 - [r/cybersecurity](https://reddit.com/r/cybersecurity)
+- [r/netsec](https://reddit.com/r/netsec)
 - [Wazuh Community](https://wazuh.com/community)
+- [ServeTheHome](https://www.servethehome.com)
 
 [@HunterBFranklin](https://github.com/HunterBFranklin) — MIT License
