@@ -23,6 +23,6 @@ DEFAULT_SIZE     = 20
 EMAIL_SENDER   = os.getenv("EMAIL_SENDER")
 EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
-EMAIL_SUBJECT   = "🚨 Wazuh Security Alert Report"
+EMAIL_SUBJECT   = "🚨 Hunter's SIEM Activity Report 🚨"
 SMTP_SERVER     = "smtp.gmail.com"
 SMTP_PORT       = 587
