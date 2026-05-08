@@ -150,13 +150,16 @@ selfhosted-siem-system/
 │   ├── elasticsearch_client.py  # Elasticsearch API queries
 │   ├── formatter.py             # HTML report formatting and template building
 │   ├── email_reporter.py        # HTML email construction and delivery
-│   ├── utils.py                 # shared helper functions and terminal output
+│   ├── utility.py                 # shared helper functions and terminal output
+│   ├── daily_recap.py           # main daily recap orchestrator (v3.0) 
+│   ├── recap_formatter.py       # builds the daily recap HTML email (v3.0)
+│   ├── scheduler.py             # toggle on/off, handles 8 PM PST scheduling (v3.0)
 │   ├── .env                     # local credentials — never committed
 │   └── .env.example             # credential template — safe to commit
 ├── templates/
-│   └── email_template.html      # HTML email template (coming v2.0)
+│   └── email_template.html      # HTML email template (v3.0)
 ├── logs/
-│   └── alert.log                # script output log
+│   └── alert.log                # script output log (v3.0)
 ├── screenshots/
 │   ├── wazuh-dashboard.png
 │   ├── vm-desktop.png
