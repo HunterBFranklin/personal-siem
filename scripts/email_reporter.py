@@ -31,9 +31,9 @@ def send_email_report(report, subject_override=None):
 
         # Build the email object.
         msg = MIMEMultipart()
-        msg['From']    = EMAIL_SENDER
+        msg['From']    = f"Hunter's SIEM <{EMAIL_SENDER}>"
         msg['To']      = EMAIL_RECEIVER
-        msg['Subject'] = EMAIL_SUBJECT
+        msg['Subject'] = subject
         
         # Add the report as the email body.
         msg.attach(MIMEText(report, 'html')) # HTML.
