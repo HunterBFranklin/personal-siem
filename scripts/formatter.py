@@ -80,14 +80,16 @@ def format_alerts(results, severity_label=None, severity_min=None, severity_max=
 
     # Dictionary for mapping MITRE techniques (bar chart and legend dots).
     mitre_colors = {
-        "Brute Force":           "#378ADD",
-        "Password Guessing":     "#639922",
-        "Sudo and Sudo Caching": "#BA7517",
-        "Credential Access":     "#D85A30",
-        "Lateral Movement":      "#7F77DD",
-        "Defense Evasion":       "#1D9E75",
-        "Privilege Escalation":  "#993C1D",
-        "SSH":                   "#185FA5",
+        "Brute Force":              "#A12727",
+        "Password Guessing":        "#5A2299",
+        "Sudo and Sudo Caching":    "#C7860E",
+        "Credential Access":        "#B5C824",
+        "Lateral Movement":         "#A431CA",
+        "Defense Evasion":          "#0F51E1",
+        "Privilege Escalation":     "#7A0559",
+        "SSH":                      "#17C59F",
+        "Valid Accounts":           "#12890D",
+        "Stored Data Manipulation": "#F0289D"
     }
 
     # Dictionary for mapping MITRE techniques (alert details).
