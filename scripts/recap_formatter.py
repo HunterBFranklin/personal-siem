@@ -197,7 +197,14 @@ def format_recap(results):
                 label, color, bg = meta
                 compliance_tags += f'<span style="display:inline-block; font-size:10px; padding:2px 6px; border-radius:8px; background:{bg}; color:{color}; margin-right:4px; font-weight:500;">{label}: {values[0]}</span>'
 
-        # HTML formatting for top 10.
+        # region --- Top 10 HTML Formatting ---
+        # This section builds the HTML for the top 10 most important alerts.
+        # Each alert gets a numbered row with a severity badge, MITRE technique
+        # bubble, full description, meta line showing agent/rule/timestamp/tactic,
+        # and compliance framework tags at the bottom. Alerts are pre-sorted by
+        # rule level before reaching this point so #1 is always the most severe
+        # thing that happened in the last 24 hours.
+        # endregion
         top_10_rows += f"""
         <table width="100%" cellpadding="0" cellspacing="0"
                style="border-bottom:1px solid #e8e8e8;">
